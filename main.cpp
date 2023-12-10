@@ -5,10 +5,9 @@
 // Description : Engineer's Calculator
 // Last Changed :  09/21/2023 ,  6:30 AM
 
-
 #define _USE_MATH_DEFINES
 #include <cmath>
-#include <conio.h>
+#include <conio.h> // must remoce this header file
 #include <iomanip>
 #include <iostream>
 
@@ -57,22 +56,22 @@ int main()
 	{
 		Menu();
 		MainChoice = _getch() - '0';
-/*============================================================================*/
+		/*============================================================================*/
 		/*Basic Arithmetic*/
 		switch (MainChoice)
 		{
 		case 0:
 			std::cout << "F this shit I'm out.\n";
 			return 0;
-/*============================================================================*/
-		case 1: 
+			/*============================================================================*/
+		case 1:
 			BasicArith();
 			SubChoice = _getch() - '0';
 			switch (SubChoice)
 			{
-			case 1: 
+			case 1:
 				Addition();
-			break;
+				break;
 			case 2:
 				Subtraction();
 				break;
@@ -82,11 +81,12 @@ int main()
 			case 4:
 				Division();
 				break;
-			default: std::cout << "Bruh, Wrong Choice.\n";
+			default:
+				std::cout << "Bruh, Wrong Choice.\n";
 			}
 			break;
-/*============================================================================*/
-		case 2: 
+			/*============================================================================*/
+		case 2:
 			Exponentiation();
 			SubChoice = _getch() - '0';
 
@@ -101,25 +101,27 @@ int main()
 			case 3:
 				CubeRoot();
 				break;
-			default: std::cout << "Bruh, Wrong Choice.\n";
+			default:
+				std::cout << "Bruh, Wrong Choice.\n";
 			}
 			break;
-/*============================================================================*/
-		case 3: 
+			/*============================================================================*/
+		case 3:
 			Logarithm();
 			SubChoice = _getch() - '0';
 			switch (SubChoice)
 			{
-			case 1:			
+			case 1:
 				break;
 			case 2:
 				break;
 			case 3:
 				break;
-			default: std::cout << "Bruh, Wrong Choice.\n";
+			default:
+				std::cout << "Bruh, Wrong Choice.\n";
 			}
 			break;
-/*============================================================================*/
+			/*============================================================================*/
 		case 4:
 			Trigonometry();
 			SubChoice = _getch() - '0';
@@ -137,10 +139,11 @@ int main()
 				break;
 			case 6:
 				break;
-			default: std::cout << "Bruh, Wrong Choice.\n";
+			default:
+				std::cout << "Bruh, Wrong Choice.\n";
 			}
 			break;
-/*============================================================================*/
+			/*============================================================================*/
 		case 5:
 			NSC();
 			SubChoice = _getch() - '0';
@@ -149,17 +152,19 @@ int main()
 			case 1:
 				break;
 			case 2:
-				break; 
+				break;
 			case 3:
 				break;
 			case 4:
 				break;
-			default: std::cout << "Bruh, Wrong Choice.\n";
+			default:
+				std::cout << "Bruh, Wrong Choice.\n";
 			}
 			break;
 
-		default: std::cout << "Invalid Choice. Please Try Again.\n";
-		break;
+		default:
+			std::cout << "Invalid Choice. Please Try Again.\n";
+			break;
 		}
 	}
 	return 0;
@@ -289,7 +294,7 @@ void CubeRoot()
 /***Computations/Formula***/
 /**Basic Arithmetic**/
 /*Addtion*/
-double Add(double x,double y)
+double Add(double x, double y)
 {
 	return x + y;
 }
@@ -327,9 +332,9 @@ double IntegersOnly()
 	double Number;
 	while (!(std::cin >> Number))
 	{
-		//Resets The Input:
+		// Resets The Input:
 		std::cin.clear();
-		//Used to Discard the Newline Character from the Input Buffer Before Reading the Character
+		// Used to Discard the Newline Character from the Input Buffer Before Reading the Character
 		std::cin.ignore(256, '\n');
 		std::cout << "Invalid Input. Please Enter Numbers Only: ";
 	}
